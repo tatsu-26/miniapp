@@ -1,0 +1,33 @@
+body {
+  background-image: url(Maldives7_Fihalhohi1.jpeg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+div {
+display: block;
+.content{
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+}
+.box{
+  background-color: ＃eceff1;
+}
+.row {
+align-items: center;
+}
+.pagination {
+text-align: center;
+}
+
+.col.offset-m3{
+margin-left: 25%;
+display: block;
+}
+h1 {
+font-size: 15px;
+}
+footer {
+  margin-top: auto;
+}

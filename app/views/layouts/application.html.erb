@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Miniapp</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <style type="text/css" href="./style.css"></style>
+
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+    <script
+    src="https://code.jquery.com/jquery-3.4.1.js"
+    integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+    crossorigin="anonymous"></script>
+          
+  </head>
+
+  <body>
+    <nav class="blue lighten-2">
+      <div class="nav-wrapper">
+          <a href="#" class="brand-logo center">mini app</a>
+          <% if user_signed_in? %>
+            <div class="user_nav gird-6">
+              <ul id="nav-mobile" class="right hide-on-med-and-down">
+                  <li>
+                    <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
+                  </li>
+            </div>
+          <% else %>
+            <div class="gird-6">
+              <ul id="nav-mobile" class="right hide-on-med-and-down">
+                <li><%= link_to "サインイン", new_user_session_path, class: "post" %></li>
+                <li><%= link_to "新規登録", new_user_registration_path, class: "post" %></li>
+              </ul>
+            </div>
+          <% end %>
+        
+      </div>
+    </nav>
+    <%= yield %>
+  </body>
+</html>

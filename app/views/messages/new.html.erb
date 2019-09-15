@@ -1,0 +1,9 @@
+<div class="contents row">
+  <div class="container">
+    <%= form_for @message do |f| %>
+      <h5>投稿する</h5>
+      <%= f.text_area :text, placeholser: "text" %>
+      <%= f.submit "SENT" %>
+    <% end %>
+  </div>
+</div>

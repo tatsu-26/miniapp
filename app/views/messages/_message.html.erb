@@ -1,0 +1,16 @@
+<div class="row">
+  <div class="col s12 m6 offset-m3">
+    <div>
+        <div class="card-content white-text">
+          <%= simple_format(message.text) %>
+        </div>
+        <div class="card-action">
+          <ul class="more-list">
+            <%if user_signed_in? && current_user.id == message.user_id %>
+              <%= link_to "編集", "/messages/#{message.id}/edit", method: :get %>
+              <%= link_to "削除", "/messages/#{message.id}", method: :delete %>
+            <% end %>
+        </div>
+    </div>
+  </div>
+</div>
